@@ -7,6 +7,7 @@ var {Todo} = require('./models/todo');
 var {User} = require('./models/user');
 
 var app = express();
+const port = process.env.PORT || 3000;
 
 // Config middleware
 app.use(bodyParser.json());
@@ -52,8 +53,8 @@ if (!ObjectID.isValid(id)) {
 });
 
 
-app.listen(3000, () => {
-  console.log('Start on port 3000')
+app.listen(port, () => {
+  console.log('Started up at port'+port);
 });
 
 module.exports = {app};
